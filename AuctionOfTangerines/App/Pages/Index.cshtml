@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    @foreach (var tangerine in Model.Tangerines)
+    {
+        <form method="post">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 name="tangId" class="card-title">Id: @tangerine.Id</h5>
+                    <input type="hidden" name="tangId" value="@tangerine.Id">
+                    <p name="oldSum" class="card-text">Текущая ставка: @tangerine.CurrentPrice</p>
+                    <input type="hidden" name="oldSum" value="@tangerine.CurrentPrice">
+                    <p>Введите свою ставку</p>
+                    <input type="text" name="newSum"><br><br>
+                    <button type="submit" id="bet" class="btn btn-primary">Bet</button>
+                </div>
+            </div>
+        </form>
+    }
+</div>

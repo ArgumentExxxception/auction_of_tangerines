@@ -1,0 +1,17 @@
+@page
+@model AuctionOfTangerines.Pages.LogIn
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<link rel="stylesheet" href="css/login.css">
+
+<div class="login">
+    <h1>Login</h1>
+    <form method="post">
+        <input type="text" name="email" placeholder="email" required="required" />
+        <input type="password" name="password" placeholder="password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+</div>
